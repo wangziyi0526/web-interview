@@ -15,7 +15,7 @@
 
 1. 在`src/asset`下建立一个 scss 文件夹, 其中包含 index.scss 文件,内容如下
 
-```
+```scss
 // light
 $color-brand1: #ffcd32;
 $fill-1: #fff !default;
@@ -27,12 +27,11 @@ $dark-fill-1: #222 !default; // 品牌色
 $dark-color-text: #fff;
 $dark-color-text-1: rgba(255, 255, 255, 0.3);
 $dark-color-text-2: $color-brand1;
-
 ```
 
 2. 在 App.vue 文件中的 style 标签中引入, 如下所示
 
-```
+```vue
 <template>
   <div id="app" :data-theme="style">
     <div class="name">kobe</div>
@@ -101,7 +100,32 @@ export default {
   }
 }
 </style>
-
 ```
 
 > 可以是先换肤，但是需要多少套皮肤, 相对应就需要多少套皮肤样式
+
+## 冒泡排序
+
+```js
+var bubbleSort1 = (arr = []) => {
+  const len = arr.length - 1
+  // i为轮数 因i从0开始 即i<len-1
+  for (let i = 0; i < len; i++) {
+    // j为比较次数 第i轮仅需比较length-1-i次
+    for (let j = 0; j < len - i; j++) {
+      // 通过判断相邻两项的大小 决定是否交换位置
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j]
+        arr[j] = arr[j + 1]
+        arr[j + 1] = temp
+      }
+    }
+  }
+  return arr
+}
+
+//举个数组
+myArr = [20, 18, 27, 19, 35]
+//使用函数
+bubbleSort1(myArr)
+```
