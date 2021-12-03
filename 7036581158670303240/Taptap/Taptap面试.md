@@ -15,7 +15,7 @@
 
 1. 在`src/asset`下建立一个 scss 文件夹, 其中包含 index.scss 文件,内容如下
 
-```
+```scss
 // light
 $color-brand1: #ffcd32;
 $fill-1: #fff !default;
@@ -32,7 +32,7 @@ $dark-color-text-2: $color-brand1;
 
 2. 在 App.vue 文件中的 style 标签中引入, 如下所示
 
-```
+```vue
 <template>
   <div id="app" :data-theme="style">
     <div class="name">kobe</div>
